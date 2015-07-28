@@ -34,5 +34,15 @@ public class UsuarioRest {
 
 		return usuario;
 	}
+	
+	@Path("/foo")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public Usuario foo(){
+		Usuario usuario = new Usuario();
+		usuario.setNome("Foo");
+		usuario.setEmail("foo@mail.com");
+		return usuario;
+	}
 
 }
