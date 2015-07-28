@@ -113,6 +113,25 @@
       </dependency>
 
       <!-- Now we declare any tools needed -->
+      
+      <dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>5.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.primefaces.themes</groupId>
+			<artifactId>all-themes</artifactId>
+			<version>1.0.10</version>
+		</dependency>
+      
 
       <!-- Annotation processor to generate the JPA 2.0 metamodel classes 
          for typesafe criteria queries -->
