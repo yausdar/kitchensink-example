@@ -1,2 +1,3 @@
 -- You can use this file to load seed data into the database using SQL statements
---insert into Member (id, name, email, phone_number) values (0, 'John Smith', 'john.smith@mailinator.com', '2125551212') 
+insert into tb_usuario (ds_nome , ds_email , ds_senha) values ('Administrador' , 'admin@mail.com' , MD5('admin'));
+insert into tb_usuario_papel (cd_usuario , ds_papel) values (1 , 'ADMIN');
