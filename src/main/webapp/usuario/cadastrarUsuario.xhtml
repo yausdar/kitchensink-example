@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/WEB-INF/templates/default.xhtml">
+<ui:define name="centro">
+	<h:form id="formContent">
+	 
+		<p:panel styleClass="Card ShadowEffect" style="width: 30%; margin-left: 35%; margin-right: 35%; margin-top: 3%;">
+			
+			<h2 class="BigTopic">Cadastro de novos usuários</h2>
+			
+			<p:inputText id="inputNome" value="#{usuarioBean.usuario.nome}"  style="width: 90%"
+				title="Digite seu nome completo" placeholder="Nome completo"/><br/>
+			<p:message for="inputNome"/><br/>
+			
+			<p:inputText id="inputEmail" value="#{usuarioBean.usuario.email}"   style="width: 90%"
+				title="Digite seu email de contato" placeholder="mail@mail.com"/><br/>
+			<p:message for="inputEmail"/><br/>
+			
+			<p:password value="#{usuarioBean.usuario.senha}" id="inputSenha" placeholder="Digite sua senha"   style="width: 90%"/><br/>
+			<p:message for="inputSenha"/><br/>
+			
+			<p:password value="#{usuarioBean.usuario.confirmacaoSenha}" id="inputConfirmacaoSenha" placeholder="Repita sua senha"   style="width: 90%"/><br/>
+			<p:message for="inputConfirmacaoSenha"/><br/>
+			
+
+			<f:facet name="footer">
+				<div style="text-align: right;">
+				<p:commandButton value="Salvar" 
+					action="#{usuarioBean.saveUsuario}" icon="fa fa-save"
+					process="@form" update="@form" id="buttonSubmit"/>
+				</div>
+			</f:facet>
+		</p:panel>
+		
+	
+	</h:form>
+</ui:define>
+</ui:composition>
+</html>

@@ -6,18 +6,22 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <ui:composition template="/WEB-INF/templates/default.xhtml">
-	<ui:define name="centro">
+<ui:define name="centro">
+	<h:form id="formContent">
+		
+		<p:dataTable value="#{usuarioBean.listaUsuario}" var="usuario">
+			<p:column>
+				<p:outputLabel value="#{usuario.nome}"/>
+			</p:column>
+			
+			<p:column>
+				<p:outputLabel value="#{usuario.email}"/>
+			</p:column>
+			
+		</p:dataTable>
+		
 	
-	<h:form name="formContent">
-		
-		
-		<p:panel styleClass="Card ShadowEffect" style="width: 30%; margin-left: 35%; margin-right: 35%; margin-top: 3%; text-align:center">
-			<h2 class="BigTopic">Bem-vindo ao kitchensink</h2>	
-			Esta é uma página de exemplo
-		</p:panel>	
 	</h:form>
-
-	
-	</ui:define>
+</ui:define>
 </ui:composition>
 </html>
