@@ -2,23 +2,12 @@ package service;
 
 import java.io.Serializable;
 
-import javax.annotation.Resource;
 import javax.ejb.EJB;
-import javax.ejb.SessionContext;
 import javax.ejb.Stateful;
-import javax.interceptor.ExcludeDefaultInterceptors;
-import javax.interceptor.Interceptors;
-
-import org.junit.Ignore;
 
 import auth.AuthException;
-import auth.AuthInterceptor;
-import auth.Role;
-import auth.RolesAllowed;
-import logger.LoggerInterceptor;
 import dao.UsuarioDao;
 import entity.Usuario;
-import exception.BusinessRuleException;
 
 @Stateful
 public class SessaoService implements Serializable {

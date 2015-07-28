@@ -4,11 +4,8 @@ import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.interceptor.Interceptors;
 import javax.validation.Valid;
 
-import logger.LoggerInterceptor;
-import auth.AuthInterceptor;
 import auth.Role;
 import auth.RolesAllowed;
 import dao.UsuarioDao;
