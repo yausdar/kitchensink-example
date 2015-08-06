@@ -1,10 +1,7 @@
 package selenium.pageObjects;
 
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class TelaCadastroUsuario {
 
@@ -15,13 +12,12 @@ public class TelaCadastroUsuario {
 	}
 
 	public void cadastrar(String nome, String email, String senha) {
-		driver.get("http://localhost:8080/kitchensink-example/usuario/cadastrarUsuario.xhtml");
-		driver.findElement(By.id("formContent:inputNome")).sendKeys(nome);
-		driver.findElement(By.id("formContent:inputEmail")).sendKeys(email);
-		driver.findElement(By.id("formContent:inputSenha")).sendKeys(senha);
-		driver.findElement(By.id("formContent:inputConfirmacaoSenha")).sendKeys(
-				senha);
-		driver.findElement(By.id("formContent:buttonSubmit")).click();
+		driver.get("http://localhost:8080/kitchensink-example/usuario/cadastrar.xhtml");
+		driver.findElement(By.id("inputNome")).sendKeys(nome);
+		driver.findElement(By.id("inputEmail")).sendKeys(email);
+		driver.findElement(By.id("inputSenha")).sendKeys(senha);
+		driver.findElement(By.id("inputConfirmacaoSenha")).sendKeys(senha);
+		driver.findElement(By.id("buttonSubmit")).click();
 	}
 
 }

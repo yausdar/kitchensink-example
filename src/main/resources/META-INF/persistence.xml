@@ -17,18 +17,18 @@
 
 
 <!-- 	COMENTAR AS LINHAS ABAIXO ANTES DE REALIZAR DEPLOY -->
-<!-- 	<persistence-unit name="test" transaction-type="RESOURCE_LOCAL"> -->
-<!-- 		<provider>org.hibernate.ejb.HibernatePersistence</provider> -->
-<!-- 		<properties> -->
-<!-- 			<property name="javax.persistence.jdbc.user" value="postgres" /> -->
-<!-- 			<property name="javax.persistence.jdbc.password" value="admin" /> -->
-<!-- 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/test" /> -->
-<!-- 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> -->
-<!-- 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" /> -->
+	<persistence-unit name="test" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<properties>
+			<property name="javax.persistence.jdbc.user" value="postgres" />
+			<property name="javax.persistence.jdbc.password" value="admin" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/test" />
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
 
-<!-- 			<property name="hibernate.hbm2ddl.auto" value="create-drop" /> -->
-<!-- 			<property name="hibernate.show_sql" value="true" /> -->
-<!-- 		</properties> -->
-<!-- 	</persistence-unit> -->
+			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
+			<property name="hibernate.show_sql" value="true" />
+		</properties>
+	</persistence-unit>
 
 </persistence>
