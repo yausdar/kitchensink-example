@@ -1,7 +1,5 @@
 package dao;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -49,44 +47,47 @@ public class UsuarioDaoTest {
 	public void discardScenario() {
 		em.getTransaction().rollback();
 	}
-	
+
 	@Test
-	public void save(){
+	public void save() {
 		dao.save(usuario);
 		Usuario foundByEmail = dao.findByEmail(usuario.getEmail());
 		Assert.assertNotNull(foundByEmail);
 		Assert.assertEquals(usuario.getNome(), foundByEmail.getNome());
 	}
-	
+
 	@Test
-	public void getAll(){
+	public void getAll() {
 		int size = dao.getAll().size();
 		dao.save(usuario);
-		Assert.assertEquals(size+1, dao.getAll().size());
+		Assert.assertEquals(size + 1, dao.getAll().size());
 	}
-	
+
 	@Test
-	public void findByEmail(){
+	public void findByEmail() {
 		dao.save(usuario);
 		Assert.assertNotNull(dao.findByEmail(usuario.getEmail()));
 		Assert.assertNull(dao.findByEmail("email"));
 	}
-	
+
 	@Test
-	public void findByEmailInvalid(){
+	public void findByEmailInvalid() {
 		Assert.assertNull(dao.findByEmail(null));
 		Assert.assertNull(dao.findByEmail(""));
 	}
-	
+
 	@Test
-	public void loginNull(){
+	public void loginNull() {
 		dao.save(usuario);
 		Assert.assertNull(dao.login(null, "senha"));
 		Assert.assertNull(dao.login("email", null));
 		Assert.assertNull(dao.login(null, null));
 		Assert.assertNull(dao.login(usuario.getEmail(), "senha"));
 		Assert.assertNull(dao.login("email", usuario.getSenha()));
-		Assert.assertEquals(usuario.getNome(), dao.login(UsuarioTest.getUsuario().getEmail(), UsuarioTest.getUsuario().getSenha()).getNome());
-		
+		Assert.assertEquals(
+				usuario.getNome(),
+				dao.login(UsuarioTest.getUsuario().getEmail(),
+						UsuarioTest.getUsuario().getSenha()).getNome());
+
 	}
 }

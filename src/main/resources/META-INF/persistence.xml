@@ -14,6 +14,9 @@
 		</properties>
 	</persistence-unit>
 
+
+
+<!-- 	COMENTAR AS LINHAS ABAIXO ANTES DE REALIZAR DEPLOY -->
 <!-- 	<persistence-unit name="test" transaction-type="RESOURCE_LOCAL"> -->
 <!-- 		<provider>org.hibernate.ejb.HibernatePersistence</provider> -->
 <!-- 		<properties> -->
