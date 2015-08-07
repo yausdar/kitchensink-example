@@ -2,10 +2,8 @@ package bean;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
@@ -28,6 +26,8 @@ public class LocaleBean implements Serializable {
 
 	@PostConstruct
 	public void init() {
+		locale = "en";
+		
 		listLocale = new ArrayList<String>();
 		listLocale.add("en");
 		listLocale.add("pt");
