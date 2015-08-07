@@ -15,4 +15,15 @@
 		<phase-listener>logger.LifeCycleListener</phase-listener>
 	</lifecycle>
 
+	<application>
+		<locale-config>
+			<default-locale>pt</default-locale>
+			<supported-locale>en</supported-locale>
+		</locale-config>
+		<resource-bundle>
+			<base-name>messages</base-name>
+			<var>msg</var>
+		</resource-bundle>
+	</application>
+
 </faces-config>

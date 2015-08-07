@@ -9,14 +9,22 @@
 	<ui:define name="centro">
 
 		<h:form name="formContent">
-
-
 			<p:panel styleClass="Card ShadowEffect"
 				style="margin: 2%; text-align:center">
-				<h2 class="BigTopic">Bem-vindo ao kitchensink</h2>
+				<h2 class="BigTopic">
+					<p:outputLabel value="#{msg['greeting']}" styleClass="BigTopic" />
+				</h2>
 				<f:facet name="footer">
-					Esta é uma página de exemplo
-			
+					<div style="align: right">
+					
+					<p:selectOneMenu id="selectLocale" 
+						value="#{localeBean.locale}">
+						<f:selectItems value="#{localeBean.listLocale}"/>
+						<p:ajax event="change" listener="#{localeBean.changeLocale}" update="@all"/>  
+						
+					</p:selectOneMenu>
+					</div>
+
 				</f:facet>
 
 			</p:panel>
