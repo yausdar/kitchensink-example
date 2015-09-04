@@ -7,7 +7,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class Dao<T> {
 
-	@PersistenceContext(unitName = "des")
+	@PersistenceContext(unitName = "dev")
 	protected EntityManager em;
 	
 	public Dao(EntityManager em){

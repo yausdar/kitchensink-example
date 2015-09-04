@@ -167,6 +167,12 @@
 			<version>5.6.1</version>
 		</dependency>
 
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.3</version>
+		</dependency>
+
 
 		<!-- Annotation processor to generate the JPA 2.0 metamodel classes for 
 			typesafe criteria queries -->
@@ -205,12 +211,11 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>9.2-1003-jdbc4</version>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.188</version>
 			<scope>test</scope>
 		</dependency>
-		
 
 	</dependencies>
 
@@ -275,13 +280,13 @@
 							<skip>true</skip>
 						</configuration>
 					</plugin>
-					
+
 					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>cobertura-maven-plugin</artifactId>
 						<version>2.3</version>
 						<configuration>
-						
+
 							<check>
 								<haltOnFailure>false</haltOnFailure>
 								<!-- Per-class thresholds -->
