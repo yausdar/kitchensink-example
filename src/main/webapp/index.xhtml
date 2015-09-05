@@ -6,31 +6,18 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <ui:composition template="/WEB-INF/templates/default.xhtml">
-	<ui:define name="centro">
-
-		<h:form name="formContent">
-			<p:panel styleClass="Card ShadowEffect"
-				style="margin: 2%; text-align:center">
-				<h2 class="BigTopic">
-					<p:outputLabel value="#{msg['greeting']}" styleClass="BigTopic" />
-				</h2>
-				<f:facet name="footer">
-					<div style="align: right">
-					
+	<ui:define name="titulo">
+					#{msg['greeting']}
+	</ui:define>
+	<ui:define name="conteudo">
+		conteudo
+	</ui:define>
+	<ui:define name="rodape">
 					<p:selectOneMenu id="selectLocale" 
 						value="#{localeBean.locale}">
 						<f:selectItems value="#{localeBean.listLocale}"/>
 						<p:ajax event="change" listener="#{localeBean.changeLocale}" update="@all"/>  
-						
-					</p:selectOneMenu>
-					</div>
-
-				</f:facet>
-
-			</p:panel>
-		</h:form>
-
-
+					</p:selectOneMenu>						
 	</ui:define>
 </ui:composition>
 </html>

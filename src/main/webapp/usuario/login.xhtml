@@ -5,52 +5,30 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
+
 <ui:composition template="/WEB-INF/templates/default.xhtml">
-	<ui:define name="centro">
-		<h:form id="formContent" prependId="false">
-
-
-			<div class="ui-grid ui-grid-responsive">
-				<div class="ui-grid-row">
-					<div class="ui-grid-col-4"></div>
-					<div class="ui-grid-col-4">
-
-						<p:panel styleClass="Card ShadowEffect" style="margin-top: 2%; margin-bottom: 2%">
-
-							<h2 class="BigTopic">Painel de autenticação</h2>
-
-							<p:inputText id="inputEmail" value="#{sessaoBean.email}"
-								style="width: 90%" title="Digite seu email de contato"
-								placeholder="email" />
-							<p:message for="inputEmail" />
-							<br />
-
-							<p:password value="#{sessaoBean.senha}" id="inputSenha"
-								placeholder="senha" style="width: 90%" />
-							<p:message for="inputSenha" />
-							<br />
-
-							<f:facet name="footer">
-								<div style="text-align: right;">
-									<p:commandButton value="Entrar" icon="fa fa-save"
-										action="#{sessaoBean.login}" process="@form" update="@form"
-										id="buttonSubmit" />
-								</div>
-							</f:facet>
-						</p:panel>
-
-					</div>
-					<div class="ui-grid-col-4"></div>
+	<ui:define name="titulo">
+					Painel de autenticação
+	</ui:define>
+	<ui:define name="conteudo">
+		<div class="ui-grid ui-grid-responsive">
+			<div class="ui-grid-row">
+				<div class="ui-grid-col-4"></div>
+				<div class="ui-grid-col-4">
+					<p:inputText id="inputEmail" value="#{sessaoBean.email}"
+						style="width: 90%" title="Digite seu email de contato"
+						placeholder="email" />
+					<p:password value="#{sessaoBean.senha}" id="inputSenha"
+						placeholder="senha" style="width: 90%" />
 				</div>
+				<div class="ui-grid-col-4"></div>
 			</div>
-
-
-
-
-
-
-
-		</h:form>
+		</div>
+	</ui:define>
+	<ui:define name="rodape">
+		<p:commandButton value="Entrar" icon="fa fa-save"
+			action="#{sessaoBean.login}" process="@form" update="@form"
+			id="buttonSubmit" />
 	</ui:define>
 </ui:composition>
 </html>

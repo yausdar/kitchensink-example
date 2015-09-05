@@ -11,46 +11,52 @@
 	<h:outputStylesheet name="css/screen.css" />
 	<h:outputStylesheet name="css/theme.css" />
 	<h:outputStylesheet name="css/style.css" />
-	<h:outputStylesheet library="awesome" name="css/font-awesome.css"/>
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'/>
+	<h:outputStylesheet library="awesome" name="css/font-awesome.css" />
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed'
+		rel='stylesheet' type='text/css' />
 </h:head>
 <h:body>
-<f:view locale="#{localeBean.locale}">
+	<f:view locale="#{localeBean.locale}">
+		<h:form id="formMenu">
+			<p:menubar>
+				<p:menuitem value="Home" icon="fa fa-home"
+					action="/index.xhtml?faces-redirect=true" />
+				<p:menuitem value="Cadastre-se" icon="fa fa-user"
+					action="/usuario/cadastrar.xhtml?faces-redirect=true" />
+				<f:facet name="options">
+					<p:outputLabel value="#{sessaoBean.usuario.nome}"
+						id="outputNomeUsuario" rendered="#{sessaoBean.usuario != null}"
+						style="margin-right: 20px;" />
+					<p:commandButton action="#{sessaoBean.logout}" id="buttonLogout"
+						value="Sair" icon="fa fa-sign-out"
+						rendered="#{sessaoBean.usuario != null}" />
+					<p:commandButton id="buttonLogin" value="Entrar"
+						action="/usuario/login.xhtml?faces-redirect=true"
+						icon="fa fa-sign-in" rendered="#{sessaoBean.usuario == null}" />
+				</f:facet>
+			</p:menubar>
+		</h:form>
+		<p:messages autoUpdate="true" globalOnly="true" sticky="true"
+			id="growl" style="margin-left: 5% ; margin-right: 5%" />
 
+		<h:form name="formContent" id="formContent" prependId="false">
+			<p:panel styleClass="Card ShadowEffect"
+				style="margin: 2%;">
+				<h2 class="BigTopic" style="margin-left: 2%">
+					<ui:insert name="titulo" />
+				</h2>
+				<ui:insert name="conteudo" />
+				<br/><br/>
+				<f:facet name="footer">
+					<div style="text-align: right">
+						<ui:insert name="rodape" />
+					</div>
+				</f:facet>
+			</p:panel>
+		</h:form>
+		<div style="text-align: center; font-size: 12px;">[TÍTULO DA
+			APLICAÇÃO] - [VERSÃO] - [AMBIENTE]</div>
 
-	
-			<h:form id="formMenu">
-
-				<p:growl autoUpdate="true" globalOnly="true" sticky="true" id="growl"/>
-
-
-
-				<p:menubar>
-					<p:menuitem value="Home" icon="fa fa-home" action="/index.xhtml?faces-redirect=true"/>
-					<p:menuitem value="Cadastre-se" icon="fa fa-user" action="/usuario/cadastrar.xhtml?faces-redirect=true"/>
-				
-					<f:facet name="options">
-					
-					
-						<p:outputLabel value="#{sessaoBean.usuario.nome}" id="outputNomeUsuario"
-							rendered="#{sessaoBean.usuario != null}" style="margin-right: 20px;" />  	
-						<p:commandButton action="#{sessaoBean.logout}" id="buttonLogout" value="Sair"
-							icon="fa fa-sign-out" rendered="#{sessaoBean.usuario != null}" />
-						<p:commandButton id="buttonLogin" value="Entrar"
-							action="/usuario/login.xhtml?faces-redirect=true"
-							icon="fa fa-sign-in" rendered="#{sessaoBean.usuario == null}" />
-					</f:facet>
-				</p:menubar>
-
-
-			</h:form>
-		
-			<ui:insert name="centro" />
-		
-			<div style="text-align: center ; font-size: 12px;">
-				[TÍTULO DA APLICAÇÃO] - [VERSÃO] - [AMBIENTE]
-			</div>
-	
-</f:view>
+	</f:view>
 </h:body>
 </html>

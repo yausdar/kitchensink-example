@@ -6,7 +6,6 @@ import javax.ws.rs.core.MediaType;
 
 import junit.framework.Assert;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import com.fasterxml.jackson.core.JsonParseException;

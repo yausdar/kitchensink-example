@@ -17,7 +17,7 @@ public class TelaCadastroUsuario {
 		driver.findElement(By.id("inputEmail")).sendKeys(email);
 		driver.findElement(By.id("inputSenha")).sendKeys(senha);
 		driver.findElement(By.id("inputConfirmacaoSenha")).sendKeys(senha);
-		driver.findElement(By.id("buttonSubmit")).click();
+		driver.findElement(By.id("buttonSalvar")).click();
 	}
 
 }
