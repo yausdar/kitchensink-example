@@ -1,6 +1,5 @@
 package service;
 
-import java.util.List;
 import java.util.Map;
 
 import javax.ejb.EJB;
@@ -17,13 +16,13 @@ public class ParamService {
 	@EJB
 	private ParamDao paramDao;
 
-	@RolesAllowed(Role.ADMIN)
-	public List<Param> getAll() {
-		return paramDao.getAll();
-	}
+	private Map<String, Param> params;
 
 	@RolesAllowed(Role.ADMIN)
-	public Map<String, String> getMap() {
+	public Map<String, Param> getMap() {
+		if (params == null) {
+			params = paramDao.getMap();
+		}
 		return paramDao.getMap();
 	}
 

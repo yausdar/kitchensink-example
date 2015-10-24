@@ -53,7 +53,7 @@ public class ParamDaoTest {
 	@Test
 	public void save() {
 		dao.save(param);
-		Map<String, String> map = dao.getMap();
+		Map<String, Param> map = dao.getMap();
 		Assert.assertEquals(param.getValor(), map.get(param.getChave()));
 	}
 
@@ -75,7 +75,7 @@ public class ParamDaoTest {
 	@Test
 	public void getMap() {
 		dao.save(param);
-		Map<String, String> map = dao.getMap();
+		Map<String, Param> map = dao.getMap();
 		Assert.assertEquals(param.getValor(), map.get(param.getChave()));
 	}
 }
