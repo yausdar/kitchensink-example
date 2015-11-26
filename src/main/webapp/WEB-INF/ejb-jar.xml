@@ -3,13 +3,13 @@
 	version="3.0">
 	<interceptors>
 		<interceptor>
-			<interceptor-class>auth.AuthInterceptor</interceptor-class>
+			<interceptor-class>util.security.AuthInterceptor</interceptor-class>
 			<around-invoke>
 				<method-name>interceptor</method-name>
 			</around-invoke>
 		</interceptor>
 		<interceptor>
-			<interceptor-class>logger.LoggerInterceptor</interceptor-class>
+			<interceptor-class>util.logger.LoggerInterceptor</interceptor-class>
 			<around-invoke>
 				<method-name>interceptor</method-name>
 			</around-invoke>
@@ -18,11 +18,11 @@
 	<assembly-descriptor>
 		<interceptor-binding>
 			<ejb-name>*</ejb-name>
-			<interceptor-class>auth.AuthInterceptor</interceptor-class>
+			<interceptor-class>util.security.AuthInterceptor</interceptor-class>
 		</interceptor-binding>
 		<interceptor-binding>
 			<ejb-name>*</ejb-name>
-			<interceptor-class>logger.LoggerInterceptor</interceptor-class>
+			<interceptor-class>util.logger.LoggerInterceptor</interceptor-class>
 		</interceptor-binding>
 	</assembly-descriptor>
 

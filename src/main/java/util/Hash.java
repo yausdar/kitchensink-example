@@ -4,9 +4,12 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import javax.ejb.Stateless;
+
+@Stateless
 public class Hash {
 
-	public static String md5(String secret){  
+	public String md5(String secret){  
         String password = "";  
         MessageDigest md = null;  
         try {  

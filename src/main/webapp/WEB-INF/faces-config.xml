@@ -12,7 +12,7 @@
 		creating @Named managed beans. -->
 
 	<lifecycle>
-		<phase-listener>logger.LifeCycleListener</phase-listener>
+		<phase-listener>util.logger.LifeCycleListener</phase-listener>
 	</lifecycle>
 
 	<application>

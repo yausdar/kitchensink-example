@@ -6,8 +6,8 @@
         http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 	<persistence-unit name="test" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>entity.Param</class>
-		<class>entity.Usuario</class>
+		<class>model.entity.Param</class>
+		<class>model.entity.Usuario</class>
 		<properties>
 			<property name="javax.persistence.jdbc.user" value="sa" />
 			<property name="javax.persistence.jdbc.password" value="sa" />
