@@ -117,7 +117,7 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.6.1</version>
+			<version>1.7.34</version>
 		</dependency>
 
 		<dependency>
@@ -159,7 +159,7 @@
 		<dependency>
 			<groupId>net.sf.jasperreports</groupId>
 			<artifactId>jasperreports</artifactId>
-			<version>6.1.1</version>
+			<version>6.19.0</version>
 		</dependency>
 
 		<dependency>
